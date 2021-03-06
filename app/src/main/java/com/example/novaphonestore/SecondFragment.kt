@@ -1,5 +1,7 @@
 package com.example.novaphonestore
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -36,6 +38,7 @@ class SecondFragment : Fragment() {
             mBinding.tvPrice.text = getString(R.string.now,it.price.toString())
             mBinding.tvLastPrice.text = getString(R.string.last,it.lastPrice.toString())
             mBinding.tvDescription.text = it.description
+
             if(it.credit){
                 mBinding.tvCredit.text = "Acepta Credito"
 
@@ -44,7 +47,17 @@ class SecondFragment : Fragment() {
                 mBinding.tvCredit.text = "No Acepta Credito"
             }
 
-            
+           /* mBinding.btVentas.setOnClickListener {
+                val mIntent = Intent(Intent.EXTRA_EMAIL).apply {
+                   this.setData(Uri.parse("mailto:"))
+                    this.putExtra(Intent.EXTRA_EMAIL,"rafael.calderonp@gmail.com")
+
+                }
+                if (mIntent.resolveActivity(activity))
+                startActivity(mIntent)
+            }*/
+
+
 
 
 
